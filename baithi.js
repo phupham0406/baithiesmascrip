@@ -10,7 +10,7 @@ class Product {
 
 class ProductManager {
   constructor() {
-    // Lấy dữ liệu từ localStorage hoặc mảng rỗng
+   
     this.products = JSON.parse(localStorage.getItem("products")) || [];
   }
 
@@ -70,25 +70,23 @@ class ProductManager {
   addProduct() {
     let id, name, price, quantity;
 
-    // Validate ID
     do {
       id = prompt("Nhập ID sản phẩm:");
       if (!id) alert("ID không được để trống!");
     } while (!id);
 
-    // Validate Name
+
     do {
       name = prompt("Nhập tên sản phẩm:");
       if (!name) alert("Tên không được để trống!");
     } while (!name);
 
-    // Validate Price
+
     do {
       price = parseFloat(prompt("Nhập giá sản phẩm:"));
       if (isNaN(price) || price <= 0) alert("Giá phải là số > 0!");
     } while (isNaN(price) || price <= 0);
 
-    // Validate Quantity
     do {
       quantity = parseInt(prompt("Nhập số lượng sản phẩm:"));
       if (isNaN(quantity) || quantity <= 0) alert("Số lượng phải là số > 0!");
@@ -142,6 +140,6 @@ class ProductManager {
   }
 }
 
-// Chạy chương trình
+
 const manager = new ProductManager();
 manager.showMenu();
